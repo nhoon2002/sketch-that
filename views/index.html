@@ -12,18 +12,18 @@
     <title>Sketch That</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../public/assets/miscpack/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/miscpack/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../public/assets/miscpack/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/miscpack/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
-    <link href="../public/assets/miscpack/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="assets/miscpack/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="../public/assets/css/creative.css" rel="stylesheet">
+    <link href="assets/css/creative.css" rel="stylesheet">
 
 
 </head>
@@ -88,16 +88,16 @@
     </section>
 
     <!-- jQuery -->
-    <script src="../public/assets/miscpack/jquery/jquery.min.js"></script>
+    <script src="assets/miscpack/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../public/assets/miscpack/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/miscpack/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="../public/assets/miscpack/scrollreveal/scrollreveal.min.js"></script>
-    <script src="../public/assets/miscpack/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script src="assets/miscpack/scrollreveal/scrollreveal.min.js"></script>
+    <script src="assets/miscpack/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 
 
 </body>
@@ -186,13 +186,14 @@
 
 <!-- /////// -->
 <script>
+var currentUser_local;
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyCwyOrF2ymOnpB_sQJzJWHXTD-piXfYRTY",
-    authDomain: "sketch-that.firebaseapp.com",
-    databaseURL: "https://sketch-that.firebaseio.com",
-    storageBucket: "sketch-that.appspot.com",
-    messagingSenderId: "184085295288"
+    apiKey: "AIzaSyCCoOSqZkyzxtlWR_xr9AK-dowWArF6gx8",
+    authDomain: "sketchproject2.firebaseapp.com",
+    databaseURL: "http://sketchproject2.firebaseio.com",
+    storageBucket: "sketchproject2.appspot.com",
+    messagingSenderId: "944050465085"
   };
   firebase.initializeApp(config);
   var database = firebase.database();
@@ -206,9 +207,8 @@ $("#mainRegister").on("click", function() {
 
 
 //Clicking the log in button...
-$('#loginSubmit').on("click", function(err) {
+$('#loginSubmit').on("click", function() {
    //Saves input fields into local variables
-
    var userEmail = $('#userEmail_log').val().trim();
    var userPass =  $('#userPw_log').val().trim();
 
@@ -223,12 +223,17 @@ $('#loginSubmit').on("click", function(err) {
          //Loads the dashboard upon successful signin
         //  window.location = "dashboard.html";
         console.log("You've successfully logged in");
+        window.location.href = "/chatindex"
+        currentUser_local = firebase.auth().currentUser;
+        console.log("global: " + currentUser_local);
+        debugger;
 
       })
       .catch(function (error) {
          alert(error.message);
       });
 
+return false; //REQUIRED, otherwise firebase code BREAKS.
 
 
 });
@@ -250,6 +255,7 @@ $("#registerSubmit").on("click", function() {
   //Creates accounts to firebase
   var promise = auth.createUserWithEmailAndPassword(userEmail, userPass)
      .then(function() {
+      //  debugger;
         var loggedUser = firebase.auth().currentUser;
 
         //If successful creation, creates the following children to the user branch (labeled by uid)
@@ -262,21 +268,22 @@ $("#registerSubmit").on("click", function() {
         //TODO not sure if this ALERT code breaks everything
         alert('Please log-in again!');
 
-        window.location = "index.html"; //Reloads the log-in page
+        location.reload(); //Reloads the log-in page
 
      })
 
      .catch(function (error) {
-        alert(error.message);
+      //  debugger;
+        // alert(error.message);
      });
 
-
+return false;
 }); //end of 'create' onclick function
 
 
 $('#listLogout').on('click', function(){
    firebase.auth().signOut(); //signs out current user
-   window.location = "index.html"; //Reloads signin page
+   location.reload(); //Reloads signin page
 
    if(firebaseUser) { //if a user is logged in still...
       console.log(firebaseUser);
@@ -288,7 +295,7 @@ $('#listLogout').on('click', function(){
 
 });
 
-//When an authentication state has been changed...
+// When an authentication state has been changed...
 firebase.auth().onAuthStateChanged(firebaseUser => {
 
    // var refObject = firebase.database().ref().child('users');
