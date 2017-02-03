@@ -414,3 +414,8 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
+#logoImg {
+  width: 45%;
+  margin-bottom: 70px;
+}
