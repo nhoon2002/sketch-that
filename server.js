@@ -14,8 +14,8 @@ app.get("/", function(req, res) {
  res.sendFile(path.join(__dirname + "/views/index.html"));
 });
 
-app.get("/index2", function(req, res) {
- res.sendFile(path.join(__dirname + "/views/index2.html"));
+app.get("/gameplay", function(req, res) {
+ res.sendFile(path.join(__dirname + "/views/gameplay.html"));
 });
 
 app.get("/dashboard", function(req, res) {
