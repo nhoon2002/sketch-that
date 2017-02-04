@@ -106,7 +106,7 @@ canvas {
   height: 400px;
   max-width: 100%;
   background-color: #FFECB3;
-  margin-left: 8%;
+  margin-left: 11%;
 }
 
 #sizer {
@@ -200,8 +200,8 @@ canvas {
   position: relative;
 
   /* Box-model */
-  width: 25%;
-  height: 100px;
+  width: 100%;
+  height: auto;
   display: inline-block;
   box-sizing: border-box;
 
@@ -226,7 +226,7 @@ canvas {
   margin-bottom: 15px;
 
   /* Typography */
-  font-size: 28px;
+  font-size: 16px;
 
 }
 
@@ -336,4 +336,9 @@ li {
   background-color: lightgrey;
   color: black;
 
+}
+
+#buttonJoin {
+  width: 100%;
+  background-color: rgba(34, 34, 34, 0.09);
 }

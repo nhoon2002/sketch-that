@@ -33,6 +33,7 @@ $("#buttonJoin").click(function() {
   username = currentUser_local.email.split("@")[0];
   console.log("current user: " + username);
   getInGame();
+  $('#buttonJoin').hide();
 
 
 });
@@ -180,7 +181,7 @@ currentTurnRef.on("value", function(snapshot) {
 
       // If its the current player's turn, tell them and show choices
       if (currentTurn === playerNum) {
-        $("#current-turn").html("<h2>It's Your Turn!</h2>");
+        $("#result").html("<p>It's Your Turn!</p>");
         $("#player" + playerNum + " ul").append("<li>Rock</li><li>Paper</li><li>Scissors</li>");
       }
       else {
@@ -246,7 +247,7 @@ currentTurnRef.on("value", function(snapshot) {
       //  }
       $("#player1 ul").empty();
       $("#player2 ul").empty();
-      $("#current-turn").html("<h2>Waiting for another player to join.</h2>");
+      $("#result").html("<h6>Waiting for another player to join.</h6>");
       $("#player2").css("border", "1px solid black");
       $("#player1").css("border", "1px solid black");
     }
