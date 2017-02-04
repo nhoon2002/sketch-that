@@ -1,21 +1,98 @@
-body { /* Visual */ background-color: #E4F0D0; }
-
-header { /* Visual */ background-color: #C2D8B9; }
-
-h1 {
-
-  /* Typography */
-
-  font-size: 36px;
-  text-align: center;
-
-  /* Visual */
-
-  padding: 15px;
-
+body {
+  background-color: #F05F40;
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 
-h2 { /* Typography */ font-size: 24px; }
+a {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+  color: white;
+}
+a:hover,
+a:focus {
+  color: white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.navbar-default {
+  background-color: rgba(34, 34, 34, 0.04);
+  border-color: rgba(34, 34, 34, 0.05);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.navbar-default .navbar-header .navbar-brand {
+  color: white;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+  color: white;
+}
+.navbar-default .navbar-header .navbar-toggle {
+  font-weight: 700;
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+}
+.navbar-default .nav > li > a,
+.navbar-default .nav > li > a:focus {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+}
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus:hover {
+  color: white;
+}
+.navbar-default .nav > li.active > a,
+.navbar-default .nav > li.active > a:focus {
+  color: white !important;
+  background-color: transparent;
+}
+.navbar-default .nav > li.active > a:hover,
+.navbar-default .nav > li.active > a:focus:hover {
+  background-color: transparent;
+}
+
+.btn {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  border: none;
+  border-radius: 300px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  color: #F05F40;
+  background-color: white;
+  border-color: #F05F40;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+section {
+  margin-top: 125px;
+}
+
 
 input { /* Visual */ background-color: #FFFCF7; }
 
@@ -28,7 +105,7 @@ canvas {
   z-index: 1;
   height: 400px;
   max-width: 100%;
-  color: cyan;
+  background-color: #FFECB3;
   margin-left: 8%;
 }
 
@@ -132,8 +209,13 @@ canvas {
   text-align: center;
 
   /* Visual */
-  border: 1px solid black;
-  padding: 10px;
+
+      border-radius: 25px;
+      background: #00F6FF;
+      padding: 20px;
+      width: 200px;
+      height: auto;
+
 
 }
 

@@ -1,12 +1,18 @@
+// console.log();
+console.log("Timeout 1s");
+setTimeout(function() {
+  console.log("Running app.js----");
+
 
 // var poop = require('./firebaseconfig.js');
-console.log("Running app.js----");
+console.log(firebase.auth().currentUser);
 // var auth = firebase.auth();
 var database = firebase.database();
 var chatData = database.ref("/chat"); //chatbranch
 var playersRef = database.ref("players"); //playersbranch
 var currentTurnRef = database.ref("turn");
-var username = "Guest";
+var currentUser_local = firebase.auth().currentUser;
+var username = "guest";
 var currentPlayers = null;
 var currentTurn = null;
 var playerNum = false;
@@ -16,32 +22,25 @@ var playerOneData = null;
 var playerTwoData = null;
 
 
-console.log(firebase.auth().currentUser);
-// console.log(testpoop);
-// console.log("User: " + firebase.auth().currentUser.email);
+
+console.log("User: " + firebase.auth().currentUser.email);
+
 
 // // USERNAME LISTENERS
 // // Start button - takes username and tries to get user in game
-$("#start").on("click",function() {
+$("#buttonJoin").click(function() {
 
-  // if ((playerOneExists) && (playerOneExists)) {
-  //
-  //   getInGame();
-  // }
+  username = currentUser_local.email.split("@")[0];
+  console.log("current user: " + username);
+  getInGame();
+
+
 });
-//
-// listener for 'enter' in username input
-// $("#username").keypress(function(e) {
-//   if (e.keyCode === 13 && $("#username").val() !== "") {
-//     username = currentUser_local.email.split("@")[0];
-//     getInGame();
-//   }
-// });
-//
-// Function to capitalize usernames
-// function capitalize(name) {
-//   return name.charAt(0).toUpperCase() + name.slice(1);
-// }
+
+
+
+
+
 
 // CHAT LISTENERS
 // Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
@@ -290,11 +289,12 @@ function getInGame() {
     playerRef.set({
       name: username,
       wins: 0,
-      losses: 0,
-      choice: null
+      losses: 0
+      // choice: null
     });
 
     // On disconnect remove this user's player object
+    //TODO:
     playerRef.onDisconnect().remove();
 
     // If a user disconnects, set the current turn to 'null' so the game does not continue
@@ -309,7 +309,7 @@ function getInGame() {
     });
 
     // Remove name input box and show current player number.
-    $("#swap-zone").html("<h2>Hi " + username + "! You are Player " + playerNum + "</h2>");
+    // $("#notificationBar").html("<h2>Hi " + username + "! You are Player " + playerNum + "</h2>");
   }
   else {
 
@@ -370,5 +370,4 @@ function gameLogic(player1choice, player2choice) {
     playerOneWon();
   }
 }
-
-// console.log(firebase.auth().currentUser);
+}, 2000);
