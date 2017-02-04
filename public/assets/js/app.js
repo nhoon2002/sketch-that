@@ -187,7 +187,7 @@ currentTurnRef.on("value", function(snapshot) {
       else {
 
         // If it isnt the current players turn, tells them theyre waiting for player one
-        $("#current-turn").html("<h2>Waiting for " + playerOneData.name + " to choose.</h2>");
+        $("#result").html("<p>Waiting for " + playerOneData.name + " to choose.</p>");
       }
 
       // Shows yellow border around active player
@@ -199,7 +199,7 @@ currentTurnRef.on("value", function(snapshot) {
 
       // If its the current player's turn, tell them and show choices
       if (currentTurn === playerNum) {
-        $("#current-turn").html("<h2>It's Your Turn!</h2>");
+        $("#result").html("<p>It's Your Turn!</p>");
         $("#player" + playerNum + " ul").append("<li>Rock</li><li>Paper</li><li>Scissors</li>");
       }
       else {

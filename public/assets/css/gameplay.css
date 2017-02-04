@@ -191,7 +191,6 @@ canvas {
 #game-div { /* Typography */ text-align: center; }
 
 #player1,
-#result,
 #player2 {
 
   /* Positioning */
@@ -214,6 +213,32 @@ canvas {
       background: linear-gradient(white, #00F6FF);
       padding: 20px;
       width: 200px;
+      height: auto;
+
+
+}
+
+#result{
+  /* Positioning */
+  margin: 2%;
+  vertical-align: top;
+  position: relative;
+
+  /* Box-model */
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  box-sizing: border-box;
+
+  /* Typography */
+  text-align: center;
+
+  /* Visual */
+
+      border-radius: 25px;
+      background: linear-gradient(white, #00F6FF);
+      padding: 20px;
+      width: 50%;
       height: auto;
 
 
@@ -308,6 +333,7 @@ li {
   /* Box-model */
   height: 500px;
   overflow: scroll;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 
   /* Visual */
   background-color: #FFFCF7;
@@ -324,9 +350,12 @@ li {
 
 #chat-input { /* Box-model */ width: 100%; }
 
-#chat-send { /* Box-model */ width: 100%; }
+#chat-send {
+  width: 100%;
+  margin-top: 10px;
+}
 
-.player1 { /* Visual */ color: #419D78; }
+.player1 { /* Visual */ color: #FDB39D; }
 
 .player2 { /* Visual */ color: #2D3047; }
 
