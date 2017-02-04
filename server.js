@@ -1,8 +1,12 @@
 var express = require('express');
 var app = express();
+
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
+
 var path = require("path");
+
+
 
 app.use(express.static("./public"));
 
@@ -10,21 +14,20 @@ app.get("/", function(req, res) {
  res.sendFile(path.join(__dirname + "/views/index.html"));
 });
 
-app.get("/chatindex", function(req, res) {
- res.sendFile(path.join(__dirname + "/views/chat-index.html"));
+app.get("/index2", function(req, res) {
+ res.sendFile(path.join(__dirname + "/views/index2.html"));
 });
 
 app.get("/dashboard", function(req, res) {
    res.sendFile(path.join(__dirname + "/views/dashboard.html"));
 });
 
-users = [];
-connections = [];
+var users = [];
+var connections = [];
 
 // store draw history
 var line_history = [];
-// store chat history
-var chat_history = [];
+
 
 io.sockets.on('connection', function(socket) {
   connections.push(socket);
@@ -40,19 +43,7 @@ io.sockets.on('connection', function(socket) {
     console.log('Disconnected %s sockets connected ', connections.length);
   });
 
-  // Send message
-  socket.on('send message', function(data) {
-    console.log('message from ' + socket.userName+ ': ' + data);
-    io.sockets.emit('new message', {msg: data, user: socket.userName});
-  });
 
-  // new user
-  socket.on('new user', function(data, callback) {
-    callback(true);
-    socket.userName = data;
-    users.push(socket.userName);
-    updateUsernames();
-  });
 
   function updateUsernames() {
     io.sockets.emit('get users', users);

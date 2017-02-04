@@ -1,4 +1,5 @@
 //------------------------------------------------------------------------------
+var socket  = io.connect();
 // JavaScript for the draw app -------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -13,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
    var context = canvas.getContext('2d');
    var width   = window.innerWidth;
    var height  = window.innerHeight;
-   var socket  = io.connect();
 
    // set canvas to full browser width/height
    canvas.width = width;
@@ -55,45 +55,3 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //------------------------------------------------------------------------------
-// Section for chat app---------------------------------------------------------
-var socket = io.connect();
-var $messageForm = $('#messageForm');
-var $message = $('#message');
-var $chat = $('#chat');
-var $messageArea = $('#messageArea');
-var $userFormArea = $('#userFormArea');
-var $userForm = $('#userForm');
-var $users = $('#users');
-var $userName = $('#userName');
-
-// send messages to socket server
-$messageForm.submit(function(e) {
-  e.preventDefault();
-  socket.emit('send message', $message.val());
-  $message.val('');
-});
-
-// listen for data from socket server and display on page
-socket.on('new message', function(data) {
-  $chat.append('<div class="well"><strong>'+ data.user +': </strong>'+ data.msg + '</div>');
-});
-
-// send username to socket server
-$userForm.submit(function(e) {
-  e.preventDefault();
-  socket.emit('new user', $userName.val(), function(data) {
-    if(data){
-      $userFormArea.hide();
-      $messageArea.show();
-    }
-  });
-  $userName.val('');
-});
-// disply users
-socket.on('get users', function(data) {
-  var html = '';
-  for(var i = 0; i < data.length; i++) {
-    html += '<li class="list-group-item">'+ data[i] +'</li>';
-  }
-  $users.html(html);
-});

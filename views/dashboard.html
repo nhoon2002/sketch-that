@@ -12,18 +12,18 @@
     <title>Sketch That</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../public/assets/miscpack/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/miscpack/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../public/assets/miscpack/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/miscpack/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
-    <link href="../public/assets/miscpack/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="assets/miscpack/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="../public/assets/css/dashboard.css" rel="stylesheet">
+    <link href="assets/css/dashboard.css" rel="stylesheet">
 
 
 </head>
@@ -73,7 +73,8 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Ready to sketch that?</h2>
                     <hr class="light">
-                      <button id="startBtn" class="btn btn-default">START</button>
+                    <!-- Warning. May give syntax error on some browsers for the windowhref -->
+                      <button id="startBtn" onclick='window.location.href="/index2"' class="btn btn-default">START</button>
                 </div>
             </div>
 
@@ -90,7 +91,7 @@
     <script src="assets/miscpack/scrollreveal/scrollreveal.min.js"></script>
     <script src="assets/miscpack/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
-    <script src="assets/js/firebaseconfig.js" type="text/javascript"</script>
+    <script src="assets/js/firebaseconfig.js" type="text/javascript"></script>
 
 
 </body>
