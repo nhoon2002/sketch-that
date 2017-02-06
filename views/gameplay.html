@@ -10,6 +10,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="/assets/miscpack/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Custom Fonts -->
     <link href="assets/miscpack/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -23,8 +24,9 @@
     <!-- Firebase Link -->
     <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 
+
   </head>
-  <body>
+  <body style='margin: 0'>
 
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
@@ -70,22 +72,20 @@
 
                 <div id="player1">
                     <h5 id="player1-name">Player1</h5>
-                    <ul>
-                    </ul>
-                    <div id="player1-chosen"></div>
+                    <!-- <ul>
+                    </ul> -->
+                    <!-- <div id="player1-chosen"></div> -->
                     <div class="outcomes">
                         <div class="outcome-trackers" id="player1-wins"></div>
                         <div class="outcome-trackers" id="player1-losses"></div>
                     </div>
                 </div>
 
-
-
                 <div id="player2">
                     <h5 id="player2-name">Player2</h5>
-                    <ul>
-                    </ul>
-                    <div id="player2-chosen"></div>
+                    <!-- <ul>
+                    </ul> -->
+                    <!-- <div id="player2-chosen"></div> -->
                     <div class="outcomes">
                         <div class="outcome-trackers" id="player2-wins"></div>
                         <div class="outcome-trackers" id="player2-losses"></div>
@@ -98,12 +98,10 @@
 
             </div>
 
-            <div class="col-lg-10">
-              <!-- <div id="drawing" class="col-lg-9"> -->
-                <canvas id="drawing"></canvas>
-              <!-- </div> -->
-            </div>
-
+            <!-- Canvas Section -->
+            <div id="drawing">
+              <iframe src="https://fast-shore-34962.herokuapp.com/" id="canvasiframe" style="width:755px; height:400px;"></iframe>
+          </div>
         </div>
 
         <div id="chatbox" class="col-lg-3">
@@ -113,21 +111,73 @@
                 </div>
             </div>
             <input id="chat-input" />
-            <button id="chat-send" class="btn btn-primary">Send</button>
+            <button id="chat-send">Send</button>
         </div>
     </div>
 </div>
-</section>
+
+<!-- Modal Message -->
+<div id="resultMsg" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title" style="text-align: center;"> Correct Answer: <span id="modalAnswer"></span></h2>
+            </div>
+            <div class="modal-body" style="text-align: center">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="modalOk" class="btn btn-default" data-dismiss="modal">Okay</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="endMsg" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title" style="text-align: center;"></h2>
+      </div>
+      <div class="modal-body" style="text-align: center">
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="modalOk2" class="btn btn-default" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="/assets/miscpack/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/miscpack/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Socket.io Javascript -->
     <script src="./socket.io/socket.io.js"></script>
-    <!-- Script -->
+    <!-- Firebase Script -->
     <script type="text/javascript" src="assets/js/firebaseconfig.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/client.js"></script>
-
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <!-- Scripts for canvas area -->
+    <script src="assets/js/canvas/client.js"></script>
+    <script src="assets/js/canvas/radius.js"></script>
+    <script src="assets/js/canvas/colors.js"></script>
+     <!-- Script that stabilizes canvas content  -->
+    <script>
+      $("#canvas").outerHeight($(window).height()-$("#canvas").offset().top- Math.abs($("#canvas").outerHeight(true) - $("#canvas").outerHeight()));
+      $(window).on("resize", function(){
+        $("#canvas").outerHeight($(window).height()-$("#canvas").offset().top- Math.abs($("#canvas").outerHeight(true) - $("#canvas").outerHeight()));
+      });
+    </script>
   </body>
 
 </html>
