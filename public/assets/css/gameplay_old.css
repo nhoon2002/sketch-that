@@ -1,0 +1,373 @@
+body {
+  background-color: #F05F40;
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+
+a {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+  color: white;
+}
+a:hover,
+a:focus {
+  color: white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.navbar-default {
+  background-color: rgba(34, 34, 34, 0.04);
+  border-color: rgba(34, 34, 34, 0.05);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.navbar-default .navbar-header .navbar-brand {
+  color: white;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+  color: white;
+}
+.navbar-default .navbar-header .navbar-toggle {
+  font-weight: 700;
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+}
+.navbar-default .nav > li > a,
+.navbar-default .nav > li > a:focus {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+}
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus:hover {
+  color: white;
+}
+.navbar-default .nav > li.active > a,
+.navbar-default .nav > li.active > a:focus {
+  color: white !important;
+  background-color: transparent;
+}
+.navbar-default .nav > li.active > a:hover,
+.navbar-default .nav > li.active > a:focus:hover {
+  background-color: transparent;
+}
+
+.btn {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  border: none;
+  border-radius: 300px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  color: #F05F40;
+  background-color: white;
+  border-color: #F05F40;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+section {
+  margin-top: 125px;
+}
+
+
+input { /* Visual */ background-color: #FFFCF7; }
+
+canvas {
+
+}
+
+#drawing {
+  border: 1px solid #000;
+  z-index: 1;
+  height: 400px;
+  max-width: 100%;
+  background-color: #FFECB3;
+  margin-left: 11%;
+}
+
+#sizer {
+  background-color: cyan;
+  position: fixed;
+  /* Positioning */
+  margin: 0 auto;
+  /* Box-model */
+  width: 100%;
+  z-index: 0;
+}
+
+/***********************************
+
+              SwapZone
+
+***********************************/
+
+#swap-zone {
+
+  /* Positioning */
+  margin: 25px auto;
+
+  /* Box-model */
+  width: 75%;
+
+  /* Typography */
+  text-align: center;
+
+}
+
+#swap-zone input {
+
+  /* Box-model */
+  width: 200px;
+  height: 30px;
+
+  /* Typography */
+  font-size: 30px;
+
+}
+
+#swap-zone button {
+
+  /* Positioning */
+  vertical-align: top;
+
+  /* Box-model */
+  width: 100px;
+  height: 36px;
+
+  /* Typography */
+  font-size: 22px;
+
+}
+
+/***********************************
+
+              Turn Indicator
+
+***********************************/
+
+
+#current-turn {
+
+  /* Positioning */
+  margin: 15px auto;
+
+  /* Box-model */
+  width: 20%;
+
+  /* Typography */
+  text-align: center;
+
+}
+
+/***********************************
+
+              GameDiv
+
+***********************************/
+#game-div { /* Typography */ text-align: center; }
+
+#player1,
+#player2 {
+
+  /* Positioning */
+  margin: 2%;
+  vertical-align: top;
+  position: relative;
+
+  /* Box-model */
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  box-sizing: border-box;
+
+  /* Typography */
+  text-align: center;
+
+  /* Visual */
+
+      border-radius: 25px;
+      background: linear-gradient(white, #00F6FF);
+      padding: 20px;
+      width: 200px;
+      height: auto;
+
+
+}
+
+#result{
+  /* Positioning */
+  margin: 2%;
+  vertical-align: top;
+  position: relative;
+
+  /* Box-model */
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  box-sizing: border-box;
+
+  /* Typography */
+  text-align: center;
+
+  /* Visual */
+
+      border-radius: 25px;
+      background: linear-gradient(white, #00F6FF);
+      padding: 20px;
+      width: 50%;
+      height: auto;
+
+
+}
+
+#player1-name,
+#player2-name {
+
+  /* Positioning */
+  margin-bottom: 15px;
+
+  /* Typography */
+  font-size: 16px;
+
+}
+
+#player1-chosen,
+#player2-chosen {
+
+  /* Positioning */
+  margin-top: 25px;
+
+  /* Typography */
+  font-size: 60px;
+
+}
+
+li {
+
+  /* Positioning */
+  margin: 12px 0;
+
+  /* Typography */
+  font-size: 24px;
+
+}
+
+.outcomes {
+
+  /* Positioning */
+  position: absolute;
+  bottom: 10px;
+
+  /* Box-model */
+  width: 90%;
+
+  /* Typography */
+  text-align: center;
+
+}
+
+.outcome-trackers { /* Box-model */ display: inline-block; }
+
+#result h2 {
+
+  /* Positioning */
+  margin-top: 20px;
+
+  /* Typography */
+  font-size: 60px;
+
+}
+
+/***********************************
+
+            Chatbox
+
+***********************************/
+
+#chat {
+
+  /* Positioning */
+  position: relative;
+  margin: 20px auto;
+
+
+  /* Box-model */
+  width: 100%;
+  height: 500px;
+
+  /* Visual */
+  padding: 10px;
+
+}
+
+#chatbox {
+  border: 1px solid orange;
+  padding: 10px;
+}
+#chat-messages {
+
+  /* Box-model */
+  height: 500px;
+  overflow: scroll;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Visual */
+  background-color: #FFFCF7;
+
+}
+
+#chat-bar {
+
+  /* Positioning */
+  position: absolute;
+  bottom: 10px;
+
+}
+
+#chat-input { /* Box-model */ width: 100%; }
+
+#chat-send {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.player1 { /* Visual */ color: #FDB39D; }
+
+.player2 { /* Visual */ color: #2D3047; }
+
+.player0 {
+
+  /* Visual */
+  background-color: lightgrey;
+  color: black;
+
+}
+
+#buttonJoin {
+  width: 100%;
+  background-color: rgba(34, 34, 34, 0.09);
+}

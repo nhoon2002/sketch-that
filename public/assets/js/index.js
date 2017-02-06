@@ -101,6 +101,7 @@ return false;
 //
 // });
 
+
 // When an authentication state has been changed...
 firebase.auth().onAuthStateChanged(firebaseUser => {
 
