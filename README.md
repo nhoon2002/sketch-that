@@ -15,7 +15,7 @@
  - HTML/CSS
  
 ----------
-## Getting Start
+## Getting started
 ```
 npm install
 
