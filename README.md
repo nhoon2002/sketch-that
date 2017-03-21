@@ -16,8 +16,11 @@
  
 ----------
 ## Getting Start
-`npm install`
-`node server.js`
+```
+npm install
+
+node server.js
+```
 ----------
 For our Web Development course, my team, Alex Nam Kim, Kenichi Sugai, and I collaboratively built a multiplayer game that is similar to pictionary and Draw-Something. We were inspired by these games and wanted to construct something that utilizes real-time databases and HTML5 Canvas. 
 
