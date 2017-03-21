@@ -17,6 +17,8 @@
 ----------
 For our Web Development course, my team, Alex Nam Kim, Kenichi Sugai, and I collaboratively built a multiplayer game that is similar to pictionary and Draw-Something. We were inspired by these games and wanted to construct something that utilizes real-time databases and HTML5 Canvas. 
 
+It is a work in-progress and we hope to polish our existing feature.
+
 [Begin sketching that](https://sketch-that.herokuapp.com/)
 
 ----------
