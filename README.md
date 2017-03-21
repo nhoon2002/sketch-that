@@ -25,4 +25,4 @@ It is a work in-progress and we hope to polish our existing feature.
 ### Authors
 - [Alex Nam Kim](https://github.com/nhoon2002)
 - [Kenichi Sugai](https://github.com/Kenichiwaa)
-- Kevin Duong
+- [Kevin Duong](https://github.com/kevduong)
