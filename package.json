@@ -1,0 +1,49 @@
+{
+  "name": "sketch-that",
+  "version": "0.0.1",
+  "description": "sketchthat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevduong/sketch-that.git"
+  },
+  "keywords": [
+    "sketch"
+  ],
+  "author": "alex, ken, kvn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevduong/sketch-that/issues"
+  },
+  "homepage": "https://github.com/kevduong/sketch-that#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.15.0",
+    "firebase": "^3.6.7",
+    "firebase-cli": "^1.2.0",
+    "handlebars": "^4.0.6",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "sequelize": "^3.30.0",
+    "session": "^0.1.0",
+    "socket.io": "^1.7.2",
+    "yarn": "^0.19.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.13.0",
+    "font-awesome": "^4.6.3",
+    "jquery": "^1.11.3",
+    "magnific-popup": "^1.1.0",
+    "scrollreveal": "^3.1.4"
+  }
+}
