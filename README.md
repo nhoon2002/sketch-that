@@ -15,7 +15,6 @@
  - HTML/CSS
 
 ----------
-Search for food gifs! (powered by Giphy API)
 
 [Begin sketching that](https://sketch-that.herokuapp.com/)
 ----------
