@@ -81,6 +81,7 @@ $("#registerSubmit").on("click", function() {
      .catch(function (error) {
       //  debugger;
         // alert(error.message);
+        alert(error.message);
      });
 
 return false;
